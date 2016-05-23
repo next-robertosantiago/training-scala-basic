@@ -1,6 +1,5 @@
-/**
-  * Created by roberto.santiago on 5/5/16.
-  */
+package cot
+
 class Person (val firstName: String, val lastName: String, val age: Int, val occupation: String) {
   def fullName: String = firstName + " " + lastName
 

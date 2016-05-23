@@ -1,6 +1,5 @@
-/**
-  * Created by roberto.santiago on 5/5/16.
-  */
+package cot
+
 object JohnSmith {
   val firstName = "John"
   val lastName = "Smith"

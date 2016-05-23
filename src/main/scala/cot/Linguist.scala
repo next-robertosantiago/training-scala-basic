@@ -1,6 +1,5 @@
-/**
-  * Created by roberto.santiago on 5/5/16.
-  */
+package cot
+
 class Linguist (firstName: String, lastName: String, age: Int, val speciality: String, val favoriteLanguage: String)
   extends Person(firstName, lastName, age, "linguist") with Worker{
 

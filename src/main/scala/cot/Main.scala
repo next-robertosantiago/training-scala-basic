@@ -1,6 +1,5 @@
-/**
-  * Created by roberto.santiago on 5/5/16.
-  */
+package cot
+
 object Main {
   def main(args: Array[String]) {
     println(JohnSmith.greet(true))
