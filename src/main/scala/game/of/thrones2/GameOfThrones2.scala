@@ -16,7 +16,7 @@ trait Tywin extends Lannister{
 // Son #1
 trait Jamie extends Tywin {
   override def payTheirDebts = true
-  override def addToDebt(amount: Int) = super.addToDebt(1)//super.addToDebt(2*amount)
+  override def addToDebt(amount: Int) = super.addToDebt(2*amount)
 }
 
 // Son #2
@@ -47,11 +47,14 @@ class Leon extends Tyrion {
 
 object GameOfThrones2 extends App{
   val joffrey = new Joffrey
+  //llamada directa a su metodo
   println(joffrey.addToDebt(100)) // 1000
 
   val tommen = new Tommen
+  // no tiene metodos hace los de su herencia de derecha a izq
   println(tommen.addToDebt(100)) // 250
 
   val leon = new Leon with Jamie
+  // no tiene metodo hace su herencia pero tambien la de su padre
   println(leon.addToDebt(100)) // 200
 }
