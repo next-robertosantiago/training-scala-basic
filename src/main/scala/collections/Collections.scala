@@ -10,6 +10,14 @@ object Collections {
     case None => "?"
   }
 
+  def toInt(s: String): Option[Int] = {
+    try {
+      Some(Integer.parseInt(s.trim))
+    } catch {
+      case e: Exception => None
+    }
+  }
+
   def main(args: Array[String]): Unit = {
     val fred = Person("Fred", "Flintstone", "J")
     val wilma = Person("Wilma", "Flintstone", "A")
@@ -22,7 +30,7 @@ object Collections {
     println(peeps.filter(_.last == "Flintstone").sortWith(_.first < _.first).map(person => person.first))
 
     // Empty collection
-    val emptyCol: Seq[String] = Seq.empty[String]
+    // val emptyCol: Seq[String] = Seq.empty[String]
 
 
     // Map & Option example
@@ -42,6 +50,13 @@ object Collections {
 
     val (id, _, mail, _, _, year) = user
     println("User ID: " + id + " - eMail: " + mail + " - Year of born: " + year)
+
+    // map vs flatMap example
+    val strings = Seq("1", "2", "foo", "3", "bar")
+
+    println("Map result: " + strings.map(toInt))
+
+    println("Flatmap result: " + strings.flatMap(toInt))
   }
 
 }
