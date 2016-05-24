@@ -7,6 +7,10 @@ object Anonymous {
     f(1, 2)
   }
 
+  def fromOneToTen( f: Int => Unit ) {
+    for ( i <- 1 to 10 ) f(i)
+  }
+
   // Explicit type declaration
   val call1 = doWithOneAndTwo((x: Int, y: Int) => x + y)
 
@@ -18,5 +22,7 @@ object Anonymous {
 
   def main(args: Array[String]) {
     println(call1, call2, call3)
+
+    fromOneToTen(x => println(x+x))
   }
 }
