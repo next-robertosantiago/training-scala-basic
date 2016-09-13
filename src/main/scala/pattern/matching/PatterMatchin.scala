@@ -34,7 +34,7 @@ object PatterMatchin {
     println(length(List(1,2,3)))
     
     println("case")
-    val expr = Add(Const(1), Mult(Const(2), Mult(X(), X()))) //1 + 2 * X*X
+    val expr = Add(Const(1), Mult(Const(2), Mult(X(), X()))) //1 + (2 * (X*X)) = 19
     println(eval(expr, 3))
   }
 
